@@ -1,0 +1,1 @@
+sudo apt install python3-django -y && sudo apt install python3-psutil -y && sudo apt install python3-pandas -y && sudo apt install nmap -y && sudo apt install python3-dnspython -y && sudo apt install git -y && git clone https://github.com/projectdiscovery/nuclei-templates && sudo mv nuclei-templates ~/

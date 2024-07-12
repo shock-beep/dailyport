@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Scan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            padding-top: 60px; /* Adjust for navbar height */
+        }
+
+            .top-left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #f8f9fa;
+            padding: 10px;
+            z-index: 1000; /* Ensure it's above other content */
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left">
+        <a class="btn btn-primary btn-custom" href="../criar_scan">Criar Scan</a>
+        <a class="btn btn-primary btn-custom" href="../ver_scan/">Scan's Iniciados</a>
+        <a class="btn btn-primary btn-custom" href="../nao_comecados/">Não Iniciados</a> 
+        <a class="btn btn-primary btn-custom" href="../eventos/">Eventos</a>
+        <a class="btn btn-primary btn-custom" href="../signout/">LogOut</a>   
+    </div>
+        {{ola|linebreaks}} <br>
+        {% if port %}
+        <p><a href="../ver_output_unico/{{ip}}/tcp/{{id}}">Portos</a></p>
+        {% endif %}
+        {% if serv %}
+        <p><a href="../ver_output_unico/{{ip}}/nmap/{{id}}">Serviços</a></p>
+        {% endif %}
+        {% if web %}
+        <p><a href="../ver_output_unico/{{ip}}/nuclei/{{id}}">Web</a></p>
+        {% endif %}
+        {% if fuzz %}
+        <p><a href="../ver_output_unico/{{ip}}/fuzz/{{id}}">Dir Fuzz</a></p>
+        {% endif %}
+</body>
+
+</html>
